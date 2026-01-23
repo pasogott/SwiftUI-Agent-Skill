@@ -402,7 +402,7 @@ struct ChildView: View {
 ## Key Principles
 
 1. **Always prefer `@Observable` over `ObservableObject`** for new code
-2. **Always mark `@Observable` classes with `@MainActor`** for thread safety
+2. **Mark `@Observable` classes with `@MainActor` for thread safety (unless using default actor isolation)`**
 3. Use `@State` with `@Observable` classes (not `@StateObject`)
 4. Use `@Bindable` for injected `@Observable` objects that need bindings
 5. **Always mark `@State` and `@StateObject` as `private`**
