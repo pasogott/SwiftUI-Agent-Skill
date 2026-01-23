@@ -208,7 +208,7 @@ var attributedString = AttributedString("Hello World")
 attributedString.foregroundColor = .primary
 if let range = attributedString.range(of: "World") {
     attributedString[range].foregroundColor = .blue
-    attributedString[range].font = .bold(.body)()
+    attributedString[range].font = .body.bold()
 }
 Text(attributedString)
 ```
