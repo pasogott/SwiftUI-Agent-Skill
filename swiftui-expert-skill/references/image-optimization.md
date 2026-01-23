@@ -86,6 +86,7 @@ AsyncImage(url: imageURL) { phase in
 
 ```swift
 // Current pattern - decodes full image on main thread
+// Unsafe - force unwrap can crash if imageData is invalid
 Image(uiImage: UIImage(data: imageData)!)
     .resizable()
     .aspectRatio(contentMode: .fit)
