@@ -150,15 +150,16 @@ struct GoodView: View {
 }
 ```
 
-### $StateObject instantiation in View's initializer
+### @StateObject instantiation in View's initializer
 
-If your $StateObject creation from wrapper depends on parameters passed in initializer, be aware of redundant allocations and hidden side effects. Kudos to Vincent Pradeilles.
+If you need to create a @StateObject with initialization parameters in your view's custom initializer, be aware of redundant allocations and hidden side effects. Kudos to Vincent Pradeilles.
 
 ```swift
-// WRONG - creates new ViewModel instance on every view update
+// WRONG - creates a new ViewModel instance each time the view's initializer is called
+// (which can happen multiple times during SwiftUI's structural identity evaluation)
 struct MovieDetailsView: View {
     
-    @StateObject var viewModel: MovieDetailsViewModel
+    @StateObject private var viewModel: MovieDetailsViewModel
     
     init(movie: Movie) {
         let viewModel = MovieDetailsViewModel(movie: movie)
@@ -170,10 +171,10 @@ struct MovieDetailsView: View {
     }
 }
 
-// CORRECT - creation in @autoclosure prevents from multiple instantiations
+// CORRECT - creation in @autoclosure prevents multiple instantiations
 struct MovieDetailsView: View {
     
-    @StateObject var viewModel: MovieDetailsViewModel
+    @StateObject private var viewModel: MovieDetailsViewModel
     
     init(movie: Movie) {
         _viewModel = StateObject(
