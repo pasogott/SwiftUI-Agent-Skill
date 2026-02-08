@@ -9,6 +9,10 @@ This repository distills practical SwiftUI best practices into actionable, conci
 - Developers reviewing or refactoring SwiftUI views and data flow
 - Anyone shipping performant lists, scrolling, sheets, and navigation in SwiftUI
 
+## See also my other skills:
+- [Swift Concurrency Expert](https://github.com/AvdLee/Swift-Concurrency-Agent-Skill)
+- [Core Data Expert](https://github.com/AvdLee/Core-Data-Agent-Skill)
+
 ## How to Use This Skill
 
 ### Option A: Using skills.sh (recommended)
@@ -110,6 +114,9 @@ This skill gives your AI coding tool practical SwiftUI guidance. It can:
 swiftui-expert-skill/
   SKILL.md
   references/
+    animation-advanced.md - Performance, interpolation, and complex animation chains
+    animation-basics.md - Core animation concepts, implicit/explicit animations, timing
+    animation-transitions.md - View transitions, matchedGeometryEffect, and state changes
     image-optimization.md - AsyncImage usage, downsampling, caching
     layout-best-practices.md - Layout patterns and GeometryReader alternatives
     liquid-glass.md - iOS 26+ glass effects and fallback patterns
@@ -124,9 +131,6 @@ swiftui-expert-skill/
 ```
 <!-- END REFERENCE STRUCTURE -->
 
-## Other skills
-- [Swift Concurrency Expert](https://github.com/AvdLee/Swift-Concurrency-Agent-Skill)
-
 ## Contributing
 
 Contributions are welcome! This repository follows the [Agent Skills open format](https://agentskills.io/home), which has specific structural requirements.
@@ -139,6 +143,9 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for:
 ## About the authors
 
 Created by [Antoine van der Lee](https://www.avanderlee.com) and [Omar Elsayed](https://www.swiftdifferently.com). With years of experience in Swift & SwiftUI, this skill distills practical knowledge into actionable guidance for AI assistants. Antoine [published tens of articles on SwiftUI](https://www.avanderlee.com/category/swiftui/) on his blog called SwiftLee.
+
+## Resources
+- [Story behind this skill](https://www.swiftdifferently.com/blog/swiftui/How%20I%20stopped-resisting-ai-and-atarted-teaching-it)
 
 ## License
 
