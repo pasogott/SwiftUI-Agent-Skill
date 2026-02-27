@@ -115,6 +115,7 @@ swiftui-expert-skill/
     animation-advanced.md - Performance, interpolation, and complex animation chains
     animation-basics.md - Core animation concepts, implicit/explicit animations, timing
     animation-transitions.md - View transitions, matchedGeometryEffect, and state changes
+    accessibility-patterns.md - Accessibility traits, grouping, Dynamic Type, and VoiceOver
     image-optimization.md - AsyncImage usage, downsampling, caching
     layout-best-practices.md - Layout patterns and GeometryReader alternatives
     liquid-glass.md - iOS 26+ glass effects and fallback patterns
@@ -141,6 +142,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for:
 Several SwiftUI guidelines in this skill were inspired by or derived from the following works:
 
 - [Skills](https://github.com/Dimillian/Skills) by [Thomas Ricouard](https://github.com/Dimillian) — a collection of SwiftUI-focused Codex skills covering UI patterns, performance auditing, and Liquid Glass.
+- [SwiftLee SwiftUI articles](https://www.avanderlee.com/category/swiftui/) and [Swift articles](https://www.avanderlee.com/category/swift/) by [Antoine van der Lee](https://www.avanderlee.com) — practical SwiftUI best practices covering state management, accessibility, view composition, performance debugging, image optimization, and more.
 
 ## About the authors
 
