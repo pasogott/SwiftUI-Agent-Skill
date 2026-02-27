@@ -7,6 +7,7 @@
 - [When Targeting iOS 16+](#when-targeting-ios-16)
 - [When Targeting iOS 17+](#when-targeting-ios-17)
 - [When Targeting iOS 18+](#when-targeting-ios-18)
+- [When Targeting iOS 26+](#when-targeting-ios-26)
 
 ---
 
@@ -532,6 +533,43 @@ When using `Tab(role:)`, all tabs must use the `Tab` syntax. Mixing `Tab(role:)`
     @Previewable @State var isOn = false
     Toggle("Setting", isOn: $isOn)
 }
+```
+
+---
+
+## When Targeting iOS 26+
+
+For Liquid Glass APIs (`glassEffect`, `GlassEffectContainer`, glass button styles), see [liquid-glass.md](liquid-glass.md).
+
+### Scroll Edge Effects
+
+**Use `scrollEdgeEffectStyle(_:for:)` to configure scroll edge behavior.**
+
+```swift
+ScrollView {
+    // content
+}
+.scrollEdgeEffectStyle(.soft, for: .top)
+```
+
+### Background Extension
+
+**Use `backgroundExtensionEffect()` for edge-extending blurred backgrounds.**
+
+```swift
+Image("hero")
+    .backgroundExtensionEffect()
+```
+
+### Tab Bar
+
+**Use `tabBarMinimizeBehavior(_:)` to control tab bar minimization.**
+
+```swift
+TabView {
+    // tabs
+}
+.tabBarMinimizeBehavior(.onScrollDown)
 ```
 
 ---
