@@ -11,6 +11,7 @@ Use this skill to build, review, or improve SwiftUI features with correct state 
 ## Workflow Decision Tree
 
 ### 1) Review existing SwiftUI code
+- **First, consult `references/latest-apis.md`** to ensure only current, non-deprecated APIs are used
 - Check property wrapper usage against the selection guide (see `references/state-management.md`)
 - Verify view composition follows extraction rules (see `references/view-structure.md`)
 - Check performance patterns are applied (see `references/performance-patterns.md`)
@@ -21,6 +22,7 @@ Use this skill to build, review, or improve SwiftUI features with correct state 
 - Validate iOS 26+ availability handling with sensible fallbacks
 
 ### 2) Improve existing SwiftUI code
+- **First, consult `references/latest-apis.md`** to replace any deprecated APIs with their modern equivalents
 - Audit state management for correct wrapper selection (see `references/state-management.md`)
 - Extract complex views into separate subviews (see `references/view-structure.md`)
 - Refactor hot paths to minimize redundant state updates (see `references/performance-patterns.md`)
@@ -31,6 +33,7 @@ Use this skill to build, review, or improve SwiftUI features with correct state 
 - Adopt Liquid Glass only when explicitly requested by the user
 
 ### 3) Implement new SwiftUI feature
+- **First, consult `references/latest-apis.md`** to use only current, non-deprecated APIs for the target deployment version
 - Design data flow first: identify owned vs injected state (see `references/state-management.md`)
 - Structure views for optimal diffing (extract subviews early, see `references/view-structure.md`)
 - Keep business logic in services and models for testability (see `references/layout-best-practices.md`)
@@ -144,6 +147,12 @@ Button("Confirm") { }
 
 ## Review Checklist
 
+### Latest APIs (see `references/latest-apis.md`)
+- [ ] No deprecated modifiers used (check against the quick lookup table)
+- [ ] API choices match the project's minimum deployment target
+- [ ] iOS 17+: Using `@Observable` instead of `ObservableObject` for new code
+- [ ] iOS 17+: Using modern `onChange(of:)` variant (not `onChange(of:perform:)`)
+
 ### State Management
 - [ ] `@State` properties are `private`
 - [ ] `@Binding` only where child modifies parent state
@@ -211,6 +220,7 @@ Button("Confirm") { }
 - [ ] Shapes and tints consistent across related elements
 
 ## References
+- `references/latest-apis.md` - **Required reading for all workflows.** Version-segmented guide of deprecated-to-modern API transitions (iOS 15+ through iOS 26+)
 - `references/state-management.md` - Property wrappers and data flow
 - `references/view-structure.md` - View composition, extraction, and container patterns
 - `references/performance-patterns.md` - Performance optimization techniques and anti-patterns
